@@ -1,7 +1,6 @@
 import {format} from 'date-fns';
 import {ru} from 'date-fns/locale';
 import React from 'react';
-import Divider from '../divider/divider';
 import Rating from '../rating/rating';
 import styles from './review.module.css';
 import {ReviewProps} from './review.props';

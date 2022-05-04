@@ -3,13 +3,14 @@ import {GetStaticPaths, GetStaticProps, GetStaticPropsContext} from 'next';
 import Head from 'next/head';
 import {ParsedUrlQuery} from 'querystring';
 import React from 'react';
-import TopPageComponent from '../../page-components/top-page-component/top-page-component';
 import {API} from '../../helpers/api';
 import {firstLevelMenu} from '../../helpers/helpers';
 import {MenuItem} from '../../interfaces/menu.interface';
 import {TopLevelCategory, TopPageModel} from '../../interfaces/page.interface';
 import {ProductModel} from '../../interfaces/product.interface';
 import {withLayout} from '../../layout/layout';
+import TopPageComponent from '../../page-components/top-page-component/top-page-component';
+import {Error404} from '../404';
 
 interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[],
@@ -18,7 +19,11 @@ interface TopPageProps extends Record<string, unknown> {
   products: ProductModel[],
 }
 
-const TopPage = ({menu, page, products, firstCategory}: TopPageProps): JSX.Element => {
+const TopPage = ({page, products, firstCategory}: TopPageProps): JSX.Element => {
+  if (!page || !products) {
+    return <Error404/>;
+  }
+
   return (
     <>
       <Head>
@@ -45,7 +50,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const {data: menu} = await axios.post<MenuItem[]>(API.topPage.find, {
       firstCategory: el.id
     });
-    paths = paths.concat(menu.flatMap((menu) => menu.pages.map((page) => `/${el.route}/${page.alias}`)));
+    paths = paths.concat(menu?.flatMap((menu) => menu.pages.map((page) => `/${el.route}/${page.alias}`)));
   }
 
   return {

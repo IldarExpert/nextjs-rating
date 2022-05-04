@@ -6,7 +6,6 @@ import {ParsedUrlQuery} from 'querystring';
 import React from 'react';
 import {API} from '../../helpers/api';
 import {firstLevelMenu} from '../../helpers/helpers';
-import Courses from '../../helpers/icons/courses.svg';
 import {MenuItem} from '../../interfaces/menu.interface';
 import {TopLevelCategory} from '../../interfaces/page.interface';
 import {withLayout} from '../../layout/layout';
@@ -29,7 +28,7 @@ const Type = ({menu}: TypeProps): JSX.Element => {
         <span className={styles.title}>{title?.name}</span>
       </div>
       <ul className={styles.list}>
-        {menu.map((menuItem) => (
+        {menu?.map((menuItem) => (
           <li className={styles.menuItem} key={menuItem._id.secondCategory}>
             <p className={styles.menuItemTitle}>{menuItem._id.secondCategory}</p>
             <ul className={styles.menuItemList}>
@@ -54,7 +53,7 @@ const Type = ({menu}: TypeProps): JSX.Element => {
 export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const paths: string[] = firstLevelMenu.map((el) => `/${el.route}`);
+    const paths: string[] = firstLevelMenu?.map((el) => `/${el.route}`);
 
   return {
     paths,

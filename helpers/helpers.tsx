@@ -15,7 +15,7 @@ export const firstLevelMenu: FirstLevelMenuItem[] = [
 
 export const priceRu = (price: number): string => {
   const regEx = /\B(?=(\d{3})+(?!\d))/g;
-  return price.toString().replace(regEx, ' ')
+  return price?.toString().replace(regEx, ' ');
 };
 
 export const declOfNum = (number: number, titles: [string, string, string]): string => {

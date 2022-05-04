@@ -2,7 +2,7 @@ import React from 'react';
 import Htag from '../htag/htag';
 import styles from './advantages.module.css';
 import {AdvantagesProps} from './advantages.props';
-import MarkIcon from './mark.svg'
+import MarkIcon from './mark.svg';
 
 const Advantages = ({advantages}: AdvantagesProps): JSX.Element => {
   return (
