@@ -1,0 +1,32 @@
+.rating {
+  position: relative;
+  white-space: nowrap;
+}
+
+.star {
+  box-sizing: content-box;
+  padding-right: 5px;
+}
+
+.isEditable {
+  cursor: pointer;
+}
+
+.star:last-child {
+  padding-right: 0;
+}
+
+.filled path {
+  fill: var(--primary);
+}
+
+.error svg {
+  stroke: var(--red);
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  color: var(--red);
+}

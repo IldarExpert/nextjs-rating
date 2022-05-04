@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 50px;
+}
+
+.advantages {
+  display: grid;
+  gap: 40px;
+}
+
+.advantage {
+  display: grid;
+  align-items: center;
+  gap: 10px 40px;
+  grid-template-columns: auto 1fr;
+}
+
+.line {
+  justify-self: center;
+  width: 1px;
+  height: 100%;
+  background: #D2D2D2;
+}

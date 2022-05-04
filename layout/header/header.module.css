@@ -1,0 +1,30 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 20px 15px;
+  overflow: auto;
+  background: #F5F6F8;
+}
+
+.menuOpen {
+  z-index: 11;
+}
+
+.menuClose {
+  position: fixed;
+  top: 20px;
+  right: 15px;
+
+  /* z-index: 11; */
+}

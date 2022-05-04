@@ -1,0 +1,33 @@
+.sort {
+  display: flex;
+  gap: 40px;
+  cursor: pointer;
+}
+
+.sortItem {
+  display: flex;
+  align-items: center;
+  font: inherit;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.active .sortItem {
+  font-weight: bold;
+}
+
+.sortItem:hover,
+.active {
+  color: var(--primary);
+}
+
+.sortIcon {
+  display: none;
+  margin-right: 8px;
+}
+
+.active .sortIcon {
+  display: inline-block;
+}
