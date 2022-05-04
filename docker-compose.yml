@@ -1,0 +1,8 @@
+version: "3"
+services:
+  app:
+    image: nextjs-rating
+    container_name: nextjs-rating
+    restart: always
+    ports:
+      - 3000:3000
