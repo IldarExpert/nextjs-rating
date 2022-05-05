@@ -19,6 +19,7 @@ function MyApp({Component, pageProps, router}: AppProps) {
       <Head>
         <title>My-top - наш лучший ТОП</title>
         <link rel="preconnect" href="https://mc.yandex.ru" />
+        <link rel="shortcut icon" href="/favicon.svg" />
         <meta property={'og:url'} content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}/>
         <meta property={'og:locale'} content={'ru-RU'}/>
       </Head>
