@@ -57,7 +57,8 @@ const Product = motion(forwardRef(({
       >
         <div className={styles.logo}>
           <Image
-            src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
+            // src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
+            src={/^https?:\/\//i.test(product.image) ? product.image : process.env.NEXT_PUBLIC_DOMAIN + product.image}
             alt={product.title}
             width={70}
             height={70}
